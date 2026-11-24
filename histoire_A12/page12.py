@@ -7,8 +7,6 @@ def page12(game_state: dict) -> int:
     """
     POUR CHAQUE PIECE ON AFFICHE LES CHEMINS DISPOS (N E S O)
 
-    LE JOUEUR A UN NOMBRE DONNE DE PAS POSSIBLES (donné qu'au début)
-
     LE JOUEUR PEUT CHERCHER DES OBJETS (TROC/VENTE/UTILISATION POSSIBLE PLUS TARD)
 
     C'EST UN LABYRINTHE
@@ -16,4 +14,4 @@ def page12(game_state: dict) -> int:
     2/3 ISSUES DIFFERENTES
     """
 
-    return res
+    return 9901

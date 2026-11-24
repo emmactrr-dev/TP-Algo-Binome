@@ -1,3 +1,4 @@
+from random import random
 from random import choice
 
 def prendre_degats(etat : dict, degats : int, afficher: bool = True) -> int:
@@ -96,4 +97,36 @@ def afficher_mot(mot : str, couleurs : str) -> None:
 
     print(texte_a_afficher)
 
+    return res
+
+mot_directions : dict = {"N" : "Nord", "S":"Sud", "E":"Est", "O":"Ouest"}
+def afficher_page_backrooms(pieces_adjacentes: dict) -> None:
+    res : None = None
+
+    print("Tu vas où? Tes choix sont:")
+    for direction in pieces_adjacentes:
+        print(mot_directions[direction], "(" + direction + ")")
+
+    return res
+
+
+def choix_page(possibilites : tuple):
+    res : int = -2
+
+    r : float = random() ## r entre 0 et 1 aléatoire
+    somme_probas : float = 0 
+    for possibilite in possibilites:
+        somme_probas = somme_probas + possibilite[1]
+        if r <= somme_probas and res == -2: ## on évite de changer plusieurs fois la valeur
+            res = possibilite[0]
+
+
+    return res
+    
+
+def est_numerique(string : str) -> bool:
+    res : bool = True
+    for c in string:
+        if c not in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+            res = False
     return res

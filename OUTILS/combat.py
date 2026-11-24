@@ -46,18 +46,18 @@ def combat(game_state: dict, monstre: dict) -> bool:
             print("Dégâts:", prendre_degats(monstre, int(1.5*game_state["attaque"]), False))
             recharge_atk_puissante = 2
 
-            print("Le dragon t'attaque")
+            print(monstre["nom"], "t'attaque")
             print("Dégâts:", prendre_degats(game_state, monstre["attaque"]*mult_attaque_monstre, False))
         elif choix == "2":
             print("Tu attaques le dragon!")
             print("Dégâts:", prendre_degats(monstre, game_state["attaque"], False))
             
-            print("Le dragon t'attaque")
+            print(monstre["nom"], "t'attaque")
             print("Dégâts:", prendre_degats(game_state, monstre["attaque"]*mult_attaque_monstre, False))
         elif choix == "3":
             print("Tu bloques le coup du dragon!")
         
-            print("Le dragon t'attaque")
+            print(monstre["nom"], "t'attaque")
             print("Dégâts:", prendre_degats(game_state, monstre["attaque"]*mult_attaque_monstre - game_state["defense"], False))
             # On "double" la défense en l'enlevant 2 fois aux dégats du monstre
         else:

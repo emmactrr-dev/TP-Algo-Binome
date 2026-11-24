@@ -29,6 +29,10 @@ def page1(game_state: dict) -> int:
     elif choix == "3" and game_state["competences"]["INTELLIGENCE"] == 3:
         # TODO TEXTE?
         res = 2
+    elif choix == "BACKROOMS": # Cheat codes
+        game_state["inventaire"].append("dague")
+        game_state["attaque"] += 2
+        res = 9901
     else:
         print("Choix invalide")
         res = 1

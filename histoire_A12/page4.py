@@ -5,7 +5,7 @@ def page4(game_state:dict)->int:
 
     print("Devant toi 3 porte")
     print("Choisis ta porte")
-    print("1- Force . 2- Dexterite . 3- Intelligence")
+    print("1- Force . 2- Dexterite . 3- Intelligence . 4- Tu voles la torche")
 
     choix: str = input("> ")
 
@@ -15,6 +15,10 @@ def page4(game_state:dict)->int:
         res = 10
     elif choix == "3":
         res = 11
+    elif choix == "4" and "torche" not in game_state["inventaire"]:
+        print("Tu prends la torche avec toi!")
+        game_state["inventaire"].append("torche")
+        res = 4
     else:
         print("Choix Invalide!")
         res = 4
